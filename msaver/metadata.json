@@ -1,0 +1,6 @@
+{
+  "name": "MSAVER",
+  "description": "Smart Money Manager - Track income, expenses, savings, and get AI-powered financial advice.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["AI Financial Advice", "Expense Tracking", "Savings Goals", "Price Comparison"]
+}

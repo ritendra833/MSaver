@@ -1,0 +1,112 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Financial user profile",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "salary": { "type": "number" },
+        "salaryDay": { "type": "number" },
+        "currency": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "SalaryRecord": {
+      "title": "Salary Record",
+      "description": "Historical salary logs",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "amount": { "type": "number" },
+        "month": { "type": "string" },
+        "year": { "type": "number" },
+        "receivedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "amount", "month", "year"]
+    },
+    "Expense": {
+      "title": "Expense",
+      "description": "User spending record",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "amount": { "type": "number" },
+        "category": { "type": "string" },
+        "note": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "amount", "category", "date"]
+    },
+    "SavingsGoal": {
+      "title": "Savings Goal",
+      "description": "Financial targets",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "targetAmount": { "type": "number" },
+        "currentAmount": { "type": "number" },
+        "deadline": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "title", "targetAmount"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Tracked products for price comparison",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "currentPrice": { "type": "number" },
+        "targetPrice": { "type": "number" },
+        "url": { "type": "string" },
+        "lastCheckedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "name", "currentPrice"]
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "App alerts",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "read": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "title", "message"]
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "salaryRecords": {
+      "schema": "SalaryRecord",
+      "description": "Monthly income logs"
+    },
+    "expenses": {
+      "schema": "Expense",
+      "description": "Spending logs"
+    },
+    "savingsGoals": {
+      "schema": "SavingsGoal",
+      "description": "Financial goals"
+    },
+    "products": {
+      "schema": "Product",
+      "description": "Monitored items"
+    },
+    "notifications": {
+      "schema": "Notification",
+      "description": "App notifications"
+    }
+  }
+}
